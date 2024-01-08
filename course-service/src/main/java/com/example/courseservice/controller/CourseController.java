@@ -33,8 +33,8 @@ public class CourseController {
         return ResponseEntity.ok("Student deleted successfully");
 
     }
-
-    public ResponseEntity<List<StudentResponse>> getCourseStudents(Long id){
+    @GetMapping("/getByCourseId/{id}")
+    public ResponseEntity<List<StudentResponse>> getCourseStudents(@PathVariable Long id){
         return ResponseEntity.ok(courseService.getCourseStudents(id));
     }
 }
