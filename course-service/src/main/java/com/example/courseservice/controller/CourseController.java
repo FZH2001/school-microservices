@@ -2,6 +2,7 @@ package com.example.courseservice.controller;
 
 import com.example.courseservice.model.Course;
 import com.example.courseservice.service.CourseService;
+import com.example.courseservice.student.StudentResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,5 +34,7 @@ public class CourseController {
 
     }
 
-
+    public ResponseEntity<List<StudentResponse>> getCourseStudents(Long id){
+        return ResponseEntity.ok(courseService.getCourseStudents(id));
+    }
 }
